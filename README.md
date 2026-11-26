@@ -38,22 +38,17 @@ And **Mode B · Local Machine Self-Check** runs a strictly read-only check on yo
 
 ### 1. Install as an Agent Skill (Recommended)
 
-Via Agent Skills CLI (works with Claude Code, Codex, Cursor, Antigravity, OpenCode, etc.):
+Via the standard Agent Skills CLI (lets you pick only the agent you want):
 
 ```bash
 npx skills add realchendahuang/oss-xray
 ```
 
-Or clone and install with `./install.sh`:
+Or copy the single `skills/oss-xray` folder manually into whichever agent directory you use (no installer script required):
 
 ```bash
 git clone https://github.com/realchendahuang/oss-xray.git
-cd oss-xray
-
-# Choose target: antigravity | claude | codex | cursor | opencode | agents | project | all
-./install.sh --target claude --symlink
-# Or link to all global agent skill directories at once:
-./install.sh --target all --symlink
+cp -r oss-xray/skills/oss-xray ~/.claude/skills/oss-xray   # or your preferred agent's skills dir
 ```
 
 ### 2. Run Standalone Without an AI Agent (Zero Dependencies)
@@ -151,7 +146,6 @@ oss-xray/
 ├── README_ZH.md
 ├── SECURITY.md
 ├── LICENSE
-├── install.sh
 └── skills/
     └── oss-xray/
         ├── SKILL.md

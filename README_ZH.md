@@ -38,22 +38,17 @@
 
 ### 方式一：一键安装为 Agent Skill（推荐）
 
-通过 Agent Skills CLI 安装（兼容 Claude Code、Codex、Cursor、Antigravity、OpenCode 等）：
+通过标准 Agent Skills CLI 安装（交互式只选你自己用的那一个客户端，绝不乱写其他目录）：
 
 ```bash
 npx skills add realchendahuang/oss-xray
 ```
 
-或者 Clone 后用 `./install.sh` 安装到指定 Agent：
+或者零安装脚本，直接把单个 `skills/oss-xray` 目录复制到你自己用的 Agent 技能目录：
 
 ```bash
 git clone https://github.com/realchendahuang/oss-xray.git
-cd oss-xray
-
-# 可选目标：antigravity | claude | codex | cursor | opencode | agents | project | all
-./install.sh --target antigravity --symlink
-# 或一次性软链到全部全局目录：
-./install.sh --target all --symlink
+cp -r oss-xray/skills/oss-xray ~/.claude/skills/oss-xray   # 换成你当前使用的 Agent 目录即可
 ```
 
 ### 方式二：不装 Agent，直接单跑零依赖脚本
@@ -151,7 +146,6 @@ oss-xray/
 ├── README_ZH.md
 ├── SECURITY.md
 ├── LICENSE
-├── install.sh
 └── skills/
     └── oss-xray/
         ├── SKILL.md
